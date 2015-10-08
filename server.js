@@ -6,6 +6,9 @@ var express = require('express'),
 // tell app to use bodyParser middleware
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/views/index.html');
+});
 
 // set up root route to respond with 'hello world'
 app.get('/', function (req, res) {
